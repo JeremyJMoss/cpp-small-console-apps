@@ -2,8 +2,9 @@
 #include "Account.h"
 
 class Checking_Account: public Account {
-    friend std::ostream &operator<<(std::ostream &os, const Checking_Account &account);
     public:
         Checking_Account(std::string name = "Unnamed Account", double balance = 0.0);
-        bool withdraw(double amount);
+        virtual ~Checking_Account() = default; 
+        virtual bool withdraw(double amount) override;
+        virtual void print(std::ostream &os) const override;
 };

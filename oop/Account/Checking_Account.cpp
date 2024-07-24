@@ -8,7 +8,6 @@ bool Checking_Account::withdraw(double amount) {
     return Account::withdraw(amount - 1.5);
 }
 
-std::ostream &operator<<(std::ostream &os, const Checking_Account &account) {
-    os << "[Checking Account: " << account.name << ": " << account.balance << "]";
-    return os;
+void Checking_Account::print(std::ostream &os) const{
+    os << "Checking Account: " << name << " with balance: " << balance; 
 }
