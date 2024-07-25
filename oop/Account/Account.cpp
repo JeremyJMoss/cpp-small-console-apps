@@ -1,24 +1,25 @@
 #include "Account.h"
+#include "IllegalBalanceException.h"
+#include "InsufficientFundsException.h"
 
 Account::Account(std::string name, double balance) 
     : name{name}, balance{balance} {
 }
 
-bool Account::deposit(double amount) {
-    if (amount < 0) 
-        return false;
-    else {
+void Account::deposit(double amount) {
+    if (amount < 0) {
+        throw IllegalBalanceException();
+    } else {
         balance += amount;
-        return true;
     }
 }
 
-bool Account::withdraw(double amount) {
+void Account::withdraw(double amount) {
     if (balance-amount >=0) {
         balance-=amount;
-        return true;
-    } else
-        return false;
+    } else {
+        throw InsufficientFundsException();
+    }
 }
 
 double Account::get_balance() const {

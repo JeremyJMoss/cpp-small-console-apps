@@ -10,8 +10,8 @@ class Account: public I_Printable{
     public:
         Account(std::string name = "Unnamed Account", double balance = 0.0);
         virtual ~Account() = default;
-        virtual bool deposit(double amount);
-        virtual bool withdraw(double amount);
+        virtual void deposit(double amount);
+        virtual void withdraw(double amount);
         double get_balance() const;
         void print(std::ostream &os) const override;
 };
