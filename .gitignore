@@ -1,13 +1,4 @@
 .vscode
 procedural/bin
-oop/Movie/bin
-oop/Mystring/bin
-oop/Account/bin
-oop/SmartPointers/bin
-oop/TourInfo/bin
-oop/AutomatedGrader/bin
-oop/RomeoAndJuliet/bin
-oop/LineNumberTool/bin
+oop/*/bin
 oop/LineNumberTool/romeoandjulietwithlinenumbers.txt
-oop/Palindromes/bin
-oop/Playlist/bin
